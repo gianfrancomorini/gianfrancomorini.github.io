@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if page.url == "/" %}{{ site.title }}{% else %}{{ page.title }} — {{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.description or site.description }}">
+<meta property="og:title" content="{{ page.title if page.url != '/' else site.title }}">
+<meta property="og:description" content="{{ page.description or site.description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://{{ site.domain }}{{ page.url }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="google-site-verification" content="jB1krbv-GX8SimaLKTtvRNKvbEuHl4l-uJjAUI5--xM">
+<link rel="canonical" href="https://{{ site.domain }}{{ page.url }}">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>:root{--accent: {{ site.accent_color or '#e35638' }};}</style>
+</head>
+<body>
+<div class="layout">
+
+  <header class="sidebar">
+    <div class="brand">
+      <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+      <a class="brand-link" href="/">
+        <span class="brand-name">{{ site.title }}</span>
+        <span class="brand-tagline">{{ site.tagline }}</span>
+      </a>
+    </div>
+
+    <div class="menu" id="menu">
+      {% if site.social_top %}<ul class="social">
+        {% for s in site.social_top %}<li><a href="{{ s.url }}" target="_blank" rel="noopener" aria-label="{{ s.icon }}">{{ s.svg|safe }}</a></li>{% endfor %}
+      </ul>{% endif %}
+
+      <nav aria-label="Main">
+        <ul class="nav">
+          {% for n in site.nav %}
+          <li><a href="{{ n.url }}"{% if n.external %} target="_blank" rel="noopener"{% endif %}{% if n.url == active %} class="selected" aria-current="page"{% endif %}>{{ n.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      {% if site.social_bottom %}<ul class="social">
+        {% for s in site.social_bottom %}<li><a href="{{ s.url }}" target="_blank" rel="noopener" aria-label="{{ s.icon }}">{{ s.svg|safe }}</a></li>{% endfor %}
+      </ul>{% endif %}
+
+      <div class="sidebar-contact">
+        p: <a href="tel:{{ site.phone|replace(' ','')|replace('(','')|replace(')','') }}">{{ site.phone }}</a><br>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <h1 class="visually-hidden">{{ page.title }}</h1>
+    {% for b in page.blocks %}{% include "blocks.html" %}{% endfor %}
+  </main>
+</div>
+
+<footer class="mobile-footer">
+  p: <a href="tel:{{ site.phone|replace(' ','')|replace('(','')|replace(')','') }}">{{ site.phone }}</a> &nbsp; <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+</footer>
+
+<a href="#" class="to-top" aria-label="Back to top">↑</a>
+
+<div class="lightbox" hidden>
+  <button class="lightbox-close" aria-label="Close">×</button>
+  <div class="lightbox-frame"></div>
+</div>
+
+{% if page.blocks|selectattr("type","equalto","spline")|list %}<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.79/build/spline-viewer.js"></script>{% endif %}
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+title: About
+slug: about
+description: About
+blocks:
+  - type: image
+    src: /assets/img/IMG_2855_frog.png
+    alt: He just likes to draw frogs
+    align: center
+  - type: text
+    heading: About
+    body: |
+      Daphne's papa and Natasha's husband.
+
+      *Past performance is not indicative of future results.
+  - type: video
+    provider: vimeo
+    id: "936478457?h=84525bb9f9"
+    aspect: "9:16"
+    max_width: 360

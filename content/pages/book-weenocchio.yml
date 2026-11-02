@@ -1,0 +1,28 @@
+title: Weenocchio
+slug: books/weenocchio
+description: "Weenocchio: The Tale of the Truthful Dachshund"
+nav_parent: /books      # keeps "Books" highlighted in the menu
+blocks:
+  - type: image
+    src: /assets/img/WEENOCCHIO-cover_lr.jpg
+    alt: Weenocchio book cover
+    align: center
+    link: https://www.amazon.com/dp/B0DDW2BF98
+  - type: text
+    heading: Weenocchio
+    body: |
+      **The Tale of the Truthful Dachshund**
+
+      Once upon a time, in a cozy little village, there lived an old and skilled toymaker named Geppetto. Known for his beautiful creations, one day he made a very special toy—a wooden dachshund named Weenocchio.
+
+      When a dazzling fairy grants Geppetto’s wish to bring Weenocchio to life, an extraordinary adventure begins! But there’s a catch—every time Weenocchio tells a lie, his body grows longer. Join Weenocchio as he learns the importance of honesty in this heartwarming tale filled with lessons about friendship, truth, and the magic of being true to oneself.
+
+      Weenocchio is a delightful and beautifully illustrated story that will captivate young readers and teach them the timeless value of honesty. Perfect for bedtime reading or as a gift, this book is sure to become a family favorite.
+
+      *Recommended for children ages 3-8.*
+
+      **Order your copy today and discover why Weenocchio Wins Big!**
+  - type: button
+    label: Available on Amazon
+    url: https://www.amazon.com/dp/B0DDW2BF98
+    price: $4.99

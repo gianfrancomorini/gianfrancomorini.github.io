@@ -1,0 +1,60 @@
+title: Home
+slug: ""            # the home page has an empty address
+description: Commercial
+blocks:
+  - type: image
+    src: /assets/img/giphy-3.gif
+    alt: Dialing progress
+    align: right
+    width: 200
+  - type: image
+    src: /assets/img/intro-gif-gian_.gif
+    alt: Gian Franco Morini intro
+    align: center
+    width: 480
+  - type: image
+    src: /assets/img/clippy-put.gif
+    alt: "Clippy: I'll put it on the list."
+    align: left
+    width: 147
+  - type: image
+    src: /assets/img/dogeGIAN.png
+    alt: Your project with Gian / without Gian
+    align: center
+    width: 650
+  - type: spline
+    url: https://prod.spline.design/0PwXM9YwVHJHlB1x/scene.splinecode
+    height: 511
+  - type: videos
+    provider: vimeo
+    layout: grid
+    columns: 2
+    videos:
+      - id: "1102236236"
+      - id: "1102236081"
+      - id: "998365867"
+      - id: "918048170"
+      - id: "953632219"
+      - id: "953632387"
+      - id: "1031274371"
+      - id: "913470906"
+      - id: "902367792"
+      - id: "927753379"
+      - id: "482193831"
+      - id: "659775434"
+      - id: "688716348"
+      - id: "291996993"
+      - id: "292014351"
+      - id: "696831839"
+      - id: "303584695"
+      - id: "368538533"
+      - id: "383382935"
+      - id: "334510320"
+  - type: spline
+    url: https://prod.spline.design/CJvVG5tIOak8J0N0/scene.splinecode
+    height: 150
+  - type: image
+    src: /assets/img/Pepe-102724.jpg
+    alt: Pepe
+    align: right
+    width: 350

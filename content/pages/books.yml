@@ -1,0 +1,17 @@
+title: Books
+slug: books
+description: Books by Gian Franco Morini
+blocks:
+  - type: cards
+    columns: 2
+    items:
+      - title: Weenocchio
+        image: /assets/img/WEENOCCHIO-cover_lr.jpg
+        link: /books/weenocchio
+        subtitle: The Tale of the Truthful Dachshund
+        excerpt: Once upon a time, in a cozy little village, there lived an old and skilled toymaker named Geppetto. Known for his beautiful creations, one day he made a very special toy—a wooden dachshund named Weenocchio.
+      - title: Crypto Coloring Book
+        image: /assets/img/crypto-coloring-book.png
+        link: /books/crypto-coloring-book
+        subtitle: A Creative Journey Through the World of Cryptocurrency
+        excerpt: Unlock your creativity and explore the fascinating world of cryptocurrency with the Crypto Coloring Book! Whether you’re a seasoned crypto enthusiast or just curious about the digital currency revolution, this book is the perfect way to combine relaxation with learning.

@@ -1,0 +1,93 @@
+{#- One template per section type. Add new types here and in .pages.yml -#}
+{%- set t = b.type -%}
+
+{%- if t == "image" %}
+<section class="block block-image align-{{ b.align or 'center' }}">
+  <figure>
+    {% if b.link %}<a href="{{ b.link }}"{% if b.link.startswith('http') %} target="_blank" rel="noopener"{% endif %}>{% endif %}
+    <img src="{{ b.src_url }}" alt="{{ b.alt or '' }}" loading="{{ 'lazy' if b.lazy else 'eager' }}"{% if b.width %} style="width:{{ b.width }}px"{% endif %}>
+    {% if b.link %}</a>{% endif %}
+    {% if b.caption %}<figcaption>{{ b.caption }}</figcaption>{% endif %}
+  </figure>
+</section>
+
+{%- elif t == "spline" %}
+<section class="block block-spline">
+  <spline-viewer url="{{ b.url }}" style="height:{{ b.height or 500 }}px"></spline-viewer>
+</section>
+
+{%- elif t == "videos" %}
+<section class="block block-videos layout-{{ b.layout or 'grid' }} cols-{{ b.columns or 2 }}">
+  {% if b.heading %}<h2 class="block-heading">{{ b.heading }}</h2>{% endif %}
+  <div class="video-grid">
+    {% for v in b.parsed %}
+    <div class="video-item">
+      <button class="video-facade" type="button" data-embed="{{ v.embed }}" data-provider="{{ v.provider }}" data-id="{{ v.id }}" data-hash="{{ v.hash }}" data-mode="{{ 'popup' if b.layout == 'popup' else 'inline' }}" aria-label="Play video{% if v.title %}: {{ v.title }}{% endif %}">
+        {% if v.thumb %}<img src="{{ v.thumb }}" alt="" loading="lazy">{% endif %}
+        <span class="play" aria-hidden="true"><svg viewBox="0 0 314.7 314.7"><circle cx="157.3" cy="157.3" r="150.4"/><polygon points="108,76.1 248.7,157.3 108,238.6"/></svg></span>
+        <span class="video-title"></span>
+      </button>
+      {% if v.title %}<p class="video-caption">{{ v.title }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{%- elif t == "video" %}
+{%- set v = b.parsed %}
+<section class="block block-video" style="max-width:{{ b.max_width or 1100 }}px">
+  <div class="ratio" style="aspect-ratio:{{ (b.aspect or '16:9')|replace(':','/') }}">
+    <iframe src="{{ v.embed }}" title="Video" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</section>
+
+{%- elif t == "episode" %}
+{%- set v = b.parsed %}
+<section class="block block-episode">
+  <div class="ratio">
+    <button class="video-facade" type="button" data-embed="{{ v.embed }}" data-provider="youtube" data-id="{{ v.id }}" data-mode="inline" aria-label="Play {{ b.title }}">
+      <img src="{{ v.thumb }}" alt="" loading="lazy">
+      <span class="play play-yt" aria-hidden="true"><svg viewBox="0 0 68 48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-3 .7-4.6 3.2-5.4 6.1C.1 13 0 24 0 24s.1 11 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.9-.7 4.6-3.2 5.4-6.1C67.9 35 68 24 68 24s-.1-11-1.5-16.3z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg></span>
+    </button>
+  </div>
+  <h2 class="episode-title">{{ b.title }}</h2>
+  <p class="episode-text">{{ b.text }}</p>
+</section>
+
+{%- elif t == "text" %}
+<section class="block block-text align-{{ b.align or 'left' }}">
+  {% if b.heading %}<h2 class="block-heading">{{ b.heading }}</h2>{% endif %}
+  <div class="rich">{{ b.body_html|safe }}</div>
+</section>
+
+{%- elif t == "cards" %}
+<section class="block block-cards cols-{{ b.columns or 2 }}">
+  {% for it in b["items"] %}
+  <article class="card">
+    <a class="card-img" href="{{ it.link }}"><img src="{{ it.image_url }}" alt="{{ it.title }}" loading="lazy"></a>
+    <h2 class="card-title"><a href="{{ it.link }}">{{ it.title }}</a></h2>
+    {% if it.subtitle %}<p class="card-subtitle">{{ it.subtitle }}</p>{% endif %}
+    <div class="card-excerpt">{{ it.excerpt_html|safe }}</div>
+    <a class="more" href="{{ it.link }}">more</a>
+  </article>
+  {% endfor %}
+</section>
+
+{%- elif t == "button" %}
+<section class="block block-button">
+  {% if b.price %}<p class="price">{{ b.price }}</p>{% endif %}
+  <a class="btn" href="{{ b.url }}"{% if b.url and b.url.startswith('http') %} target="_blank" rel="noopener"{% endif %}>{{ b.label }}</a>
+</section>
+
+{%- elif t == "contact" %}
+<section class="block block-contact">
+  <p><a href="tel:{{ site.phone|replace(' ','')|replace('(','')|replace(')','') }}">{{ site.phone }}</a></p>
+  <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+</section>
+
+{%- elif t == "embed" %}
+<section class="block block-embed">{{ b.html|safe }}</section>
+
+{%- elif t == "spacer" %}
+<div class="block-spacer" style="height:{{ b.height or 40 }}px"></div>
+{%- endif %}

@@ -1,0 +1,21 @@
+title: Fashion
+slug: fashion
+description: Fashion
+blocks:
+  - type: videos
+    provider: vimeo
+    layout: popup        # thumbnails that open the video in a lightbox
+    columns: 4
+    videos:
+      - id: "1142516861"
+      - id: "1142516999"
+      - id: "1142516930"
+      - id: "1142512484"
+      - id: "1142512583"
+      - id: "1142504654"
+      - id: "1132856623"
+      - id: "1132856640"
+      - id: "225129136"
+      - id: "344227627"
+      - id: "367487657"
+      - id: "482193831"

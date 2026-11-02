@@ -1,0 +1,6 @@
+_site/
+__pycache__/
+.DS_Store
+node_modules/
+package.json
+package-lock.json

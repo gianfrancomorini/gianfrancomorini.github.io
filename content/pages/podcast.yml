@@ -1,0 +1,40 @@
+title: Podcast
+slug: podcast
+description: Future of Education podcast episodes
+blocks:
+  - type: episode
+    youtube: EXUAZif2nEI
+    title: "Should Kids Be Gaming? Typical Gamer Shares His Story (Feat. Student Hosts!)"
+    text: "In this episode of Future of Education, MacKenzie sits down with YouTuber Typical Gamer to talk about his journey from student to gaming entrepreneur. With over 15 million subscribers, he shares what school was like for him, how he turned his love for video games into a full-time career, and what advice he has for kids—and their parents—navigating the world of gaming today. This episode also features questions from student hosts who get the inside scoop on what it really takes to build a YouTube empire through gaming."
+  - type: episode
+    youtube: qXEK-ZnFzQE
+    title: "From Special Ed to Undefeated MMA Fighter: Daniel Puder's Story (Part 1)"
+    text: "In this episode of Future of Education, MacKenzie sits down with Daniel Puder, former WWE star and undefeated MMA fighter, for a raw look at the early struggles that shaped him. From being bullied and placed in special ed to cleaning toilets just to afford a gym membership, Daniel shares how adversity fueled his grit and drive. He opens up about going to juvie, facing mental health challenges, and ultimately finding his own unconventional path to success."
+  - type: episode
+    youtube: gJk-NF70g_s
+    title: "From Juvie to Undefeated MMA Fighter: Daniel Puder's Story (Part 2)"
+    text: "MacKenzie sits down with Daniel Puder, former WWE star and undefeated MMA fighter, for a raw look at the early struggles that shaped him. From being bullied and placed in special ed to cleaning toilets just to afford a gym membership, Daniel shares how adversity fueled his grit and drive. He opens up about going to juvie, facing mental health challenges, and ultimately finding his own unconventional path to success."
+  - type: episode
+    youtube: FyXP-E9OgGQ
+    title: "“School Taught Me Nothing About Business”: FaZe Blaze's Story"
+    text: "Blazify has over 3.6 million subscribers on YouTube, but he’ll be the first to tell you school didn’t teach him how to get there. In this episode, he opens up about growing up, how video games taught him real-life skills, and everything he had to learn outside the classroom to build his business. Now he’s branching out beyond YouTube, even launching his own caffeinated chocolate bar sold at Walmart. This is a story about creativity, hustle, and rewriting the rules of success."
+  - type: episode
+    youtube: g89gjfMnvXE
+    title: "Can A.I. Replace Teachers? A Former Traditional Teacher Weighs In"
+    text: "In this episode of Future of Education, MacKenzie is joined by Jawaan, a Guide at Alpha School. With years of experience teaching prior to joining Alpha as a Guide, Jawaan brings a powerful perspective on what’s broken in the education system—and what’s possible. He shares how Alpha’s model challenges conventional norms, what he’s learned from working inside a system designed to reinvent learning from the ground up, and the state of education as a whole. Learn more about our model at 2hourlearning.com."
+  - type: episode
+    youtube: 8SjMlGwx9XM
+    title: "Why A.I. is the future of education (with Guide Jawaan)"
+    text: "In Part 2 of our conversation, MacKenzie sits down again with Alpha Guide Jawaan to explore how artificial intelligence is used inside the classroom at Alpha. They discuss how A.I. supports Alpha’s 2-Hour Learning model, what it can and can’t replace, and the evolving role of teachers in an A.I.-powered school. If you’ve ever wondered whether technology can take the place of a real educator, this episode offers key insight."
+  - type: episode
+    youtube: DDS0HHhnIBU
+    title: "Tackling Parent Burnout, Boundaries and Stress Management With Therapist Leah Marone"
+    text: "Parenting and educating in today’s world can feel like running a marathon without a finish line. In this episode, psychotherapist and wellness expert Leah Marone joins us to unpack parent and educator burnout, decision fatigue, and the relentless pressure of choosing the “right” path for your children. Leah shares practical strategies for setting boundaries, managing stress, and reclaiming balance, helping parents feel more resilient and confident in both life and education decisions. Order Leah's new book, Serial Fixer: www.serial-fixer.com"
+  - type: episode
+    youtube: 85dTLpXPycE
+    title: "When Helping Becomes Hurting: A Therapist’s Advice for Parents"
+    text: "In the final part of this two-part series, psychotherapist and wellness expert Leah Marone joins us to unpack parent and educator burnout, decision fatigue, and the relentless pressure of choosing the “right” path for your children. Leah shares practical strategies for setting boundaries, managing stress, and reclaiming balance, helping parents feel more resilient and confident in both life and education decisions. Order Leah's book, Serial Fixer: www.serial-fixer.com"
+  - type: episode
+    youtube: zaWrooFXeLw
+    title: "Addressing my hate comments"
+    text: "With over 1 million followers on Instagram, I get a lot of heated comments. So I've compiled my most common \"hater\" comments for this two-part series. In this lively debate, my producer Jay and I are tackling Alpha’s biggest criticisms head-on."

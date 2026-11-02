@@ -1,0 +1,76 @@
+# ─────────────────────────────────────────────────────────────
+#  SITE SETTINGS — name, contact info, social icons and the menu
+#  Edit in Pages CMS (Settings) or directly here on GitHub.
+# ─────────────────────────────────────────────────────────────
+title: Gian Franco Morini
+tagline: Creative & Post
+phone: (646) 509 7207
+email: gianfrancomorini@gmail.com
+domain: www.gianfrancomorini.com
+description: Gian Franco Morini — filmmaker, editor and creative/visual content producer.
+accent_color: "#e35638"   # colour of the active menu item
+
+# Icons above the menu. icon = instagram | x | vimeo | linkedin | youtube | twitch | github | tiktok | email
+social_top:
+  - icon: instagram
+    url: https://www.instagram.com/gfmorini/
+  - icon: x
+    url: https://x.com/techversetrends
+  - icon: vimeo
+    url: https://vimeo.com/showcase/5443205
+  - icon: linkedin
+    url: https://www.linkedin.com/in/gianfrancomorini/
+
+# Icons below the menu
+social_bottom:
+  - icon: youtube
+    url: https://www.youtube.com/@jesus69420
+  - icon: twitch
+    url: https://www.twitch.tv/jesus69420fromla
+  - icon: github
+    url: https://github.com/gianfrancomorini
+
+# The menu, top to bottom. Drag to reorder in Pages CMS.
+# For a page on this site use its address, e.g. /podcast
+# For an outside link paste the full https:// address (opens in a new tab).
+nav:
+  - label: Podcast
+    url: /podcast
+  - label: AI series - Ken Ciro 💪
+    url: https://www.youtube.com/watch?v=fSGNUKzshrs&list=PL-JJgng9W8DNC9_VlQ6upuEncvunTPr2-
+  - label: AI series - Silvio Reloaded ✝️
+    url: https://www.youtube.com/watch?v=IyKHfHtAgFk&list=PL-JJgng9W8DMTBlHl6DcPYkPZww3Q6RmC
+  - label: AI Work
+    url: https://vimeo.com/showcase/10456143
+  - label: Real Estate
+    url: https://vimeo.com/showcase/12423320?share=copy&fl=sm&fe=fe
+  - label: Food
+    url: https://vimeo.com/showcase/8933475?share=copy&fl=sm&fe=fe
+  - label: Social Media & Animation
+    url: https://vimeo.com/showcase/5443205
+  - label: Fashion
+    url: /fashion
+  - label: TV & Narrative
+    url: /tv-narrative
+  - label: Commercial
+    url: /commercial
+  - label: Doc & Branded Content
+    url: /documentary-branded-content
+  - label: Drawings so ugly you know they ain't made with AI
+    url: /drawings-so-ugly-you-know-they-aint-made-with-ai
+  - label: Bananarama
+    url: https://open.spotify.com/album/7qKKJfuUw9AvSptEFdHjC9?si=39d3a0c776d04fc8
+  - label: Fake Rare Gesaffelstein
+    url: https://fakeraregesaffelstein.framer.ai/
+  - label: Books
+    url: /books
+  - label: Scene Shopper - Custom GPT
+    url: https://chat.openai.com/g/g-orSwze8jl-scene-shopper
+  - label: Thoughts
+    url: https://paragraph.com/@jesus69420
+  - label: Resume / CV
+    url: https://www.dropbox.com/scl/fi/2xbfpm5777e63dzlpk1c7/GianFrancoMorini_Resume_AI_Content_Production.pdf?rlkey=qy3s9rse3c98m3m49rp7na2mn&st=0tb8doo1&dl=0
+  - label: About
+    url: /about
+  - label: Contact
+    url: /contact

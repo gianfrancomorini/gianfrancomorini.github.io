@@ -1,0 +1,38 @@
+title: Crypto Coloring Book
+slug: books/crypto-coloring-book
+description: "Crypto Coloring Book: A Creative Journey Through the World of Cryptocurrency"
+nav_parent: /books
+blocks:
+  - type: image
+    src: /assets/img/crypto-coloring-book.png
+    alt: Crypto Coloring Book cover
+    align: center
+    link: https://www.amazon.com/dp/B0DDL472XG
+  - type: text
+    heading: Crypto Coloring Book
+    body: |
+      **A Creative Journey Through the World of Cryptocurrency**
+
+      Unlock your creativity and explore the fascinating world of cryptocurrency with the Crypto Coloring Book! Whether you’re a seasoned crypto enthusiast or just curious about the digital currency revolution, this book is the perfect way to combine relaxation with learning.
+
+      **What’s Inside?**
+
+      • **Meet the Titans of Crypto:** Ever wondered who the key players in the cryptocurrency world are? Dive into detailed illustrations of figures like Satoshi Nakamoto, Vitalik Buterin, Elon Musk, and more. Each page offers a unique glimpse into the personalities and visionaries driving the crypto space forward.
+
+      • **Fun and Engaging Designs:** From Bitcoin to Ethereum, this book is filled with intricate patterns and designs inspired by the icons and logos of the crypto world. Perfect for all ages, these pages provide a fun way to unwind while learning about the blockchain universe.
+
+      • **Ideal for All Skill Levels:** Whether you’re a beginner or a coloring pro, the Crypto Coloring Book offers something for everyone. The designs range from simple to complex, allowing you to start easy and work your way up to more challenging pages.
+
+      **Why You’ll Love This Book:**
+
+      • **Learn & Relax:** Coloring is known to reduce stress and promote mindfulness. With each stroke, you’ll also gain insights into the world of cryptocurrency, making this a perfect blend of education and relaxation.
+
+      • **High-Quality Illustrations:** Every page is carefully designed with attention to detail, ensuring that your coloring experience is both enjoyable and inspiring.
+
+      • **The Perfect Gift:** Looking for a unique gift for a crypto enthusiast or someone who’s always on the cutting edge of technology? This book is an ideal choice for birthdays, holidays, or just because.
+
+      Dive into the world of digital currencies with a splash of color. Grab your Crypto Coloring Book today and start your creative journey!
+  - type: button
+    label: Available on Amazon
+    url: https://www.amazon.com/dp/B0DDL472XG
+    price: $25

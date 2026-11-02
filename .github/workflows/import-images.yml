@@ -1,0 +1,53 @@
+# One-time job: copies every image off Livebooks into assets/img/ so the site
+# no longer depends on Livebooks. Run it from the Actions tab ("Run workflow")
+# BEFORE you cancel Livebooks. Safe to run again; it skips files already saved.
+name: Import images from Livebooks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [scripts/livebooks-images.yml]
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Download images
+        run: |
+          python - <<'EOF'
+          import yaml, urllib.request, pathlib
+          cfg = yaml.safe_load(open("scripts/livebooks-images.yml"))
+          out = pathlib.Path("assets/img"); out.mkdir(parents=True, exist_ok=True)
+          for name, path in cfg["images"].items():
+              dest = out / name
+              if dest.exists():
+                  print("have", name); continue
+              url = cfg["base"] + path
+              req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+              with urllib.request.urlopen(req, timeout=60) as r:
+                  dest.write_bytes(r.read())
+              print("saved", name, dest.stat().st_size, "bytes")
+          EOF
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/img
+          git diff --cached --quiet && echo "Nothing new" && exit 0
+          git commit -m "Import images from Livebooks"
+          git push
+      - name: Republish site with local images
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main || true

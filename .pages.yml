@@ -1,0 +1,176 @@
+# Pages CMS configuration — gives the site a friendly editor at https://app.pagescms.org
+# (sign in with GitHub, pick this repository). Every save publishes the site automatically.
+
+media:
+  input: assets/img
+  output: /assets/img
+  categories: [image]
+
+content:
+  # ── Site settings: name, phone, email, social icons, menu ──
+  - name: settings
+    label: Site settings & menu
+    type: file
+    path: content/site.yml
+    format: yaml
+    fields:
+      - { name: title, label: Name, type: string }
+      - { name: tagline, label: Tagline, type: string }
+      - { name: phone, label: Phone, type: string }
+      - { name: email, label: Email, type: string }
+      - { name: domain, label: Domain (don't change unless moving), type: string }
+      - { name: description, label: Description for Google, type: text }
+      - { name: accent_color, label: Active menu colour (hex), type: string }
+      - name: nav
+        label: Menu (drag to reorder)
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Text, type: string }
+          - { name: url, label: "Link — /page-address for your pages, or full https:// link", type: string }
+      - name: social_top
+        label: Social icons above the menu
+        type: object
+        list: true
+        fields:
+          - name: icon
+            label: Icon
+            type: select
+            options: { values: [instagram, x, vimeo, linkedin, youtube, twitch, github, tiktok, email] }
+          - { name: url, label: Link, type: string }
+      - name: social_bottom
+        label: Social icons below the menu
+        type: object
+        list: true
+        fields:
+          - name: icon
+            label: Icon
+            type: select
+            options: { values: [instagram, x, vimeo, linkedin, youtube, twitch, github, tiktok, email] }
+          - { name: url, label: Link, type: string }
+
+  # ── Pages: each file is one page; add a new one with "Add an entry" ──
+  - name: pages
+    label: Pages
+    type: collection
+    path: content/pages
+    format: yaml
+    filename: "{fields.slug}.yml"
+    view:
+      fields: [title, slug]
+      primary: title
+    fields:
+      - { name: title, label: Page title, type: string, required: true }
+      - { name: slug, label: "Page address (e.g. music → gianfrancomorini.com/music). Leave empty only for Home.", type: string }
+      - { name: description, label: Description for Google / sharing, type: string }
+      - { name: draft, label: Hide this page (draft), type: boolean }
+      - { name: nav_parent, label: "Highlight this menu item (optional, e.g. /books)", type: string }
+      - name: blocks
+        label: Sections (drag to reorder, + to add)
+        type: block
+        list: true
+        blockKey: type
+        blocks:
+          - name: image
+            label: Image / GIF
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Description (for accessibility), type: string }
+              - name: align
+                label: Alignment
+                type: select
+                options: { values: [left, center, right] }
+              - { name: width, label: "Width in pixels (empty = full width)", type: number }
+              - { name: link, label: Link when clicked (optional), type: string }
+              - { name: caption, label: Caption (optional), type: string }
+          - name: videos
+            label: Video gallery (Vimeo / YouTube)
+            fields:
+              - { name: heading, label: Heading (optional), type: string }
+              - name: provider
+                label: Provider
+                type: select
+                options: { values: [vimeo, youtube] }
+              - name: layout
+                label: Style
+                type: select
+                options: { values: [grid, popup] }
+              - name: columns
+                label: Columns
+                type: select
+                options: { values: [1, 2, 3, 4] }
+              - name: videos
+                label: Videos (paste the video number or full link)
+                type: object
+                list: true
+                fields:
+                  - { name: id, label: Video number or link, type: string }
+                  - { name: title, label: Caption under video (optional), type: string }
+          - name: video
+            label: Single video
+            fields:
+              - name: provider
+                label: Provider
+                type: select
+                options: { values: [vimeo, youtube] }
+              - { name: id, label: Video number or link, type: string }
+              - name: aspect
+                label: Shape
+                type: select
+                options: { values: ["16:9", "9:16", "1:1", "4:5"] }
+              - { name: max_width, label: Max width in pixels (optional), type: number }
+          - name: episode
+            label: Podcast episode (YouTube + title + text)
+            fields:
+              - { name: youtube, label: YouTube link or id, type: string }
+              - { name: title, label: Title, type: string }
+              - { name: text, label: Description, type: text }
+          - name: text
+            label: Text
+            fields:
+              - { name: heading, label: Heading (optional), type: string }
+              - { name: body, label: Text, type: rich-text }
+              - name: align
+                label: Alignment
+                type: select
+                options: { values: [left, center, right] }
+          - name: cards
+            label: Cards (e.g. books)
+            fields:
+              - name: columns
+                label: Columns
+                type: select
+                options: { values: [1, 2, 3] }
+              - name: items
+                label: Cards
+                type: object
+                list: true
+                fields:
+                  - { name: title, label: Title, type: string }
+                  - { name: subtitle, label: Subtitle, type: string }
+                  - { name: image, label: Image, type: image }
+                  - { name: excerpt, label: Short text, type: text }
+                  - { name: link, label: Link (/page or https://), type: string }
+          - name: button
+            label: Button (e.g. Buy on Amazon)
+            fields:
+              - { name: label, label: Button text, type: string }
+              - { name: url, label: Link, type: string }
+              - { name: price, label: Price above button (optional), type: string }
+          - name: spline
+            label: 3D scene (Spline)
+            fields:
+              - { name: url, label: "Spline scene URL (…/scene.splinecode)", type: string }
+              - { name: height, label: Height in pixels, type: number }
+          - name: contact
+            label: Contact details (phone + email from settings)
+            fields:
+              - { name: note, label: Note (not shown), type: string }
+          - name: embed
+            label: Custom HTML embed (advanced)
+            fields:
+              - { name: html, label: HTML code, type: code }
+          - name: spacer
+            label: Empty space
+            fields:
+              - { name: height, label: Height in pixels, type: number }

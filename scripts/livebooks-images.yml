@@ -1,0 +1,15 @@
+# Original images on Livebooks → local file names in assets/img/
+# The "Import images from Livebooks" GitHub Action downloads these once into the repo.
+# Until that has run, the site shows them straight from Livebooks.
+base: https://static.livebooks.com/dc32fa9254294555b2200627e97f5fd8/i/
+images:
+  logo_GFM.png: b8c12a729b604d418c06b83a6ad53789/1/5feFb8zhrk/logo_GFM.png
+  giphy-3.gif: d3e86cfd67204fbcab3bbc054e993288/1/GCuCv726gZycFxatknDdac/giphy-3.gif
+  intro-gif-gian_.gif: a481b9d09b7c4ca09169c525580ed74c/1/GCuCv726gZycFxatknDdac/intro-gif-gian_.gif
+  clippy-put.gif: d001acbe22cc49ada29bd05717f0cb16/1/GCuCv726gZycFxatknDdac/clippy-put.gif
+  dogeGIAN.png: edcf014031c54ea9ad5b6e92bfd51338/1/GCuCv726gZycFxatknDdac/dogeGIAN.png
+  Pepe-102724.jpg: dd0da8cd3b0e4417b40634bff1cf910a/1/GCuCv726gZycFxatknDdac/Pepe-102724.jpg
+  basedPepesfull.png: c3d7e395f454465d8c5265016ca23ef0/1/GCuCv726gZycFxatknDdac/basedPepesfull.png
+  WEENOCCHIO-cover_lr.jpg: d2d0379ca6714baeb3335e4cfe42f6a5/1/GCuCv726gZycFxatknDdac/WEENOCCHIO%20cover_lr.jpg
+  crypto-coloring-book.png: f5ef020856a441f98b89d400ababc288/1/GCuCv726gZycFxatknDdac/1.png
+  IMG_2855_frog.png: f87febb07d8d457c9fd1e19b6f5200a3/1/GCuCv726gZycFxatknDdac/IMG_2855_frog.png
